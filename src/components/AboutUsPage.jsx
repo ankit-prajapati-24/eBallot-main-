@@ -26,7 +26,7 @@ const AboutUsPage = () => {
     async function onSubmit(data) {
         const toastId = toast.loading("Loading....");
           try{
-             const res = await apiConnecter("POST","http://localhost:4000/api/v1/profile/SendMail",data);
+             const res = await apiConnecter("POST","https://e-ballot-main.vercel.app/api/v1/profile/SendMail",data);
              toast.success(res.data.message);
              toast.dismiss(toastId);
           }
