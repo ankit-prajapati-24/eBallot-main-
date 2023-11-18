@@ -1,0 +1,588 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+.logo span{  
+    background: -webkit-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(0,212,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(0deg, rgba(49,217,23,1) 17%, rgba(255,255,255,1) 40%, rgba(255,170,0,1) 81%) ;
+   font-size: 50px;
+   font-weight: bold;   
+}
+
+li{
+   list-style: none;
+}
+.Header{
+   background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+}
+/* Primary Color - Navy Blue */
+.primary-color-hero{
+   /* background-color: #001f3f; */
+   
+   background-color: #0e569d96;
+   color: #ffffff; /* Text color on the primary background */
+}
+.primary-color {
+ /* background-color: #001f3f; */
+ 
+ background-color: #0e569dd5;
+ color: #ffffff; /* Text color on the primary background */
+}
+
+/* Secondary Color - Gold/Dark Yellow */
+.secondary-color {
+   background-color: #FFD700;
+   color: #333333; /* Text color on the secondary background */
+}
+
+/* Button Color - Dark Blue */
+.button-color {
+   background-color: #004b87;
+   color: #ffffff; /* Text color on buttons */
+}
+
+/* Navbar Background - White */
+.navbar-bg {
+   background-color: #ffffff;
+   color: #333333; /* Text color on the navbar background */
+}
+
+.carousel {
+ --current-slide: 0;
+ /* we set position relative so absolute position works properly for the buttons */
+ position: relative;
+ overflow: hidden;
+}
+
+.carousel-button {
+ /* vertically centering the buttons */
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ z-index: 1;
+
+ /* basic styling */
+ padding: 0;
+ margin: 0.5rem;
+ border-radius: 50%;
+ background-color: transparent;
+ border: none;
+
+ font-size: 1.5rem;
+ cursor: pointer;
+
+ transition: color 0.1s;
+}
+
+.carousel-button:hover {
+ color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-button_next {
+ /* The "next slide button" will be at the right */
+ right: 0;
+}
+
+.slides {
+ display: flex;
+ transition: transform 0.5s;
+ transform: translateX(calc(-100% * var(--current-slide)));
+}
+
+.slide {
+ flex: 0 0 100%;
+}
+
+@media screen and (min-width: 768px) {
+ .carousel-button {
+   font-size: 2rem;
+   margin: 1rem;
+ }
+}
+:hover.active {
+ box-shadow:rgba(11, 103, 153, 0.642);
+ /* filter: drop-shadow(10px 10px 10px rgba(11, 103, 153, 0.642)); Soft gray shadow */
+ color: black;
+}
+.active-bg{background: rgb(147,206,218);
+ /* background: linear-gradient(90deg, rgba(147,206,218,1) 0%, rgba(62,55,221,1) 0%, rgba(201,47,213,1) 100%); */
+}
+.active-hover{
+ background-color: black;
+ /* filter:drop-shadow(10 10 10 red); */
+ /* box-shadow: #001f3f; */
+}
+/*
+:hover.active-hover{
+ background-color: #235f9b;
+} */
+
+
+@media (max-width:950px) {
+ 
+ .hide_nav{
+   display: none;
+ }
+}
+@media (min-width:950px) {
+ 
+ .hide_nav{
+   display: flex;
+ }
+}
+
+.open.active_nav{
+  display: flex;
+}
+.close.active_nav{
+ display: flex;
+}
+.mobile_nav.active_nav{
+ z-index: 2;
+ position: fixed;
+ transform: translateX(0%);
+ /* max-width: 400px; */
+ /* display: flex; */
+ scale: 1;
+ opacity: 1;
+ transition: all 0.2s;
+ background: rgba(108, 123, 131, 0.171); /* Set your background color */
+ backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+ /* filter: blur(1px); */
+}
+
+.mobile_nav{
+ /* overflow: hidden; */
+ z-index: 2;
+ position: absolute;
+ /* display: none; */
+ scale: 0;
+ transform: translateX(1000%);
+ opacity: 0.2;
+ background: rgba(108, 123, 131, 0.171); /* Set your background color */
+ backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+ 
+ transition: all 0.4s;
+
+}
+.open {
+ display: none;
+}
+.close {
+display: none;
+}
+.mobile_nav ul a{
+ opacity: 2;
+ transition: all 0.4s;
+}
+
+.mobile_nav_profile{
+ position: absolute;
+ /* scale: 0; */
+ transform: translateX(-200%);
+ transition: all 0.4s;
+ display: flex;
+ flex-direction: column;
+ 
+ min-width: 180px;
+ height: 100vh;
+}
+.mobile_nav_profile.active_nav{
+ z-index: 2;
+ /* position: fixed; */
+ transform: translateX(0%);
+ /* max-width: 400px; */
+ /* display: flex; */
+ /* scale: 1; */
+ min-width: 180px;
+ display: flex;
+ flex-direction: column;
+ height: 100vh;
+ /* max-height: 900px; */
+ /* opacity: 1; */
+ transition: all 0.2s;
+ /* background: rgba(108, 123, 131, 0.171); Set your background color */
+ /* backdrop-filter: blur(10px); Adjust the blur amount as needed */
+ /* filter: blur(1px); */
+}
+.lds-ring {
+ display: inline-block;
+ position: relative;
+ width: 80px;
+ height: 80px;
+}
+.lds-ring div {
+ box-sizing: border-box;
+ display: block;
+ position: absolute;
+ width: 64px;
+ height: 64px;
+ margin: 8px;
+ 
+ border: 8px solid black;
+ border-radius: 50%;
+ animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+ border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+ animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+ animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+ animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+ 0% {
+   transform: rotate(0deg);
+ }
+ 100% {
+   transform: rotate(360deg);
+ }
+}
+
+#loader{
+ /* background-color: #4d4855; */
+ backdrop-filter: blur(2px);
+}
+
+.active-hide{
+ scale: 0;
+ transition: all 1s ease-in-out;
+}
+.OtpSubmit{
+  background-color: #0e569d96;
+}
+.loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  margin:15px auto;
+  position: relative;
+  color: black;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+  25% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 2px;
+  }
+  50% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 -2px,  -14px 0 0 2px,  -38px 0 0 -2px;
+  }
+  75% {
+    box-shadow: 14px 0 0 2px,  38px 0 0 -2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+  100% {
+    box-shadow: 14px 0 0 -2px,  38px 0 0 2px,  -14px 0 0 -2px,  -38px 0 0 -2px;
+  }
+}
+.logo span{  
+     background: -webkit-radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 29%, rgba(0,212,255,1) 100%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-image: linear-gradient(0deg, rgba(49,217,23,1) 17%, rgba(255,255,255,1) 40%, rgba(255,170,0,1) 81%) ;
+     /* background: -webkit-linear-gradient(0deg, rgba(49,217,23,1) 17%, rgba(255,255,255,1) 50%, rgba(255,170,0,1) 81%);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+      */
+    font-size: 50px;
+    font-weight: bold;   
+}
+
+li{
+    list-style: none;
+}
+.Header{
+    background-color: #4d4855;
+   background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+}
+/* Primary Color - Navy Blue */
+.primary-color-hero{
+    /* background-color: #001f3f; */
+    
+    background-color: #0e569d96;
+    color: #ffffff; /* Text color on the primary background */
+}
+.primary-color {
+  /* background-color: #001f3f; */
+  
+  background-color: #0e569dd5;
+  color: #ffffff; /* Text color on the primary background */
+}
+
+/* Secondary Color - Gold/Dark Yellow */
+.secondary-color {
+    background-color: #FFD700;
+    color: #333333; /* Text color on the secondary background */
+}
+
+/* Button Color - Dark Blue */
+.button-color {
+    background-color: #004b87;
+    color: #ffffff; /* Text color on buttons */
+}
+
+/* Navbar Background - White */
+.navbar-bg {
+    background-color: #ffffff;
+    color: #333333; /* Text color on the navbar background */
+}
+
+.carousel {
+  --current-slide: 0;
+  /* we set position relative so absolute position works properly for the buttons */
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-button {
+  /* vertically centering the buttons */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  /* basic styling */
+  padding: 0;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  transition: color 0.1s;
+}
+
+.carousel-button:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-button_next {
+  /* The "next slide button" will be at the right */
+  right: 0;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s;
+  transform: translateX(calc(-100% * var(--current-slide)));
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-button {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+}
+:hover.active {
+  box-shadow:rgba(11, 103, 153, 0.642);
+  /* filter: drop-shadow(10px 10px 10px rgba(11, 103, 153, 0.642)); Soft gray shadow */
+  color: black;
+}
+.active-bg{background: rgb(147,206,218);
+  /* background: linear-gradient(90deg, rgba(147,206,218,1) 0%, rgba(62,55,221,1) 0%, rgba(201,47,213,1) 100%); */
+}
+ .active-hover{
+  background-color: black;
+  /* filter:drop-shadow(10 10 10 red); */
+  /* box-shadow: #001f3f; */
+}
+/*
+:hover.active-hover{
+  background-color: #235f9b;
+} */
+
+
+@media (max-width:950px) {
+  
+  .hide_nav{
+    display: none;
+  }
+}
+@media (min-width:950px) {
+  
+  .hide_nav{
+    display: flex;
+  }
+}
+
+.open.active_nav{
+   display: flex;
+}
+.close.active_nav{
+  display: flex;
+}
+.mobile_nav.active_nav{
+  z-index: 2;
+  position: fixed;
+  transform: translateX(0%);
+  /* max-width: 400px; */
+  /* display: flex; */
+  scale: 1;
+  opacity: 1;
+  transition: all 0.2s;
+  background: rgba(108, 123, 131, 0.171); /* Set your background color */
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+  /* filter: blur(1px); */
+}
+
+.mobile_nav{
+  /* overflow: hidden; */
+  z-index: 2;
+  position: absolute;
+  /* display: none; */
+  scale: 0;
+  transform: translateX(1000%);
+  opacity: 0.2;
+  background: rgba(108, 123, 131, 0.171); /* Set your background color */
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+  
+  transition: all 0.4s;
+
+}
+.open {
+  display: none;
+}
+.close {
+ display: none;
+}
+.mobile_nav ul a{
+  opacity: 2;
+  transition: all 0.4s;
+}
+ 
+.mobile_nav_profile{
+  position: absolute;
+  /* scale: 0; */
+  transform: translateX(-200%);
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  
+  min-width: 180px;
+  height: 100vh;
+}
+.mobile_nav_profile.active_nav{
+  z-index: 2;
+  /* position: fixed; */
+  transform: translateX(0%);
+  /* max-width: 400px; */
+  /* display: flex; */
+  /* scale: 1; */
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* max-height: 900px; */
+  /* opacity: 1; */
+  transition: all 0.2s;
+  /* background: rgba(108, 123, 131, 0.171); Set your background color */
+  /* backdrop-filter: blur(10px); Adjust the blur amount as needed */
+  /* filter: blur(1px); */
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  
+  border: 8px solid black;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: black transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader{
+  /* background-color: #4d4855; */
+  backdrop-filter: blur(2px);
+}
+.loader {
+  position: relative;
+  display: flex;
+}
+.loader:before , .loader:after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    position: relative;
+    margin: 0  5px  ;
+    border-radius: 50%;
+    color: #FFF;
+    background: currentColor;
+    box-shadow: 50px 0 ,  -50px 0;
+    animation: left 1s infinite ease-in-out;
+  }
+  .loader:after {
+    color: #FF3D00;
+    animation: right 1.1s infinite ease-in-out;
+  }
+
+
+@keyframes right {
+  0% , 100%{transform: translateY(-10px) }
+  50% { transform: translateY(10px) }
+}
+
+@keyframes left {
+  0% , 100%{ transform: translateY(10px) }
+  50% { transform: translateY(-10px) }
+}
