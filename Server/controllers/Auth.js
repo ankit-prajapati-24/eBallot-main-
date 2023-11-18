@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const OTP = require('../models/otp');
+const OTP = require('../models/OTP');
 const otpgenerator = require("otp-generator");
 const bcrypt = require("bcrypt");
 const Profile = require("../models/Profile");
