@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(bodyparser.json());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://e-ballot-main.vercel.app/",
     credentials: true
   })
 );
