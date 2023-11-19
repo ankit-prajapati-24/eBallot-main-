@@ -22,7 +22,7 @@ const Login = () => {
       ref.current.continuousStart(); // Start the loading animation
   }
     console.log(data);
-    const res = await apiConnecter("POST","https://e-ballot-main.vercel.app/api/v1/auth/login",data);
+    const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/api/v1/auth/login",data);
     console.log(res);
     if (ref.current) {
       ref.current.complete(); // Complete the loading animation
