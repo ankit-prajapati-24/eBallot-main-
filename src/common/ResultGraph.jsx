@@ -22,7 +22,7 @@ const ResultGraph = ({ ref }) => {
 
   async function getCandidates() {
     try {
-      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/services/getCandidates", { Election_Title: ElectionName });
+      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/services/getCandidates", { Election_Title: ElectionName });
       const responseData = response.data;
       const candidatesArray = responseData.data[0].Candidates;
       if (candidatesArray.length === 0) {
