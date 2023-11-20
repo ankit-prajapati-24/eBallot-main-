@@ -26,7 +26,7 @@ const UpdateProfile = () => {
     try {
       setLoading(true);
       
-      const res = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/profile/UpdateProfile", formData);
+      const res = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/profile/UpdateProfile", formData);
       console.log(res);
       dispatch(setuserdata(res.data.UserDetails));
       setLoading(false);
