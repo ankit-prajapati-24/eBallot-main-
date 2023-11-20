@@ -34,7 +34,7 @@ const ProductCard = ({ Data, onLike, onUnlike, onSuggest }) => {
     }
   const handleLike = async() => {
    try{ 
-    const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/v1/Survey/AddLike",apiData);
+    const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/api/v1/Survey/AddLike",apiData);
     toast.success("Product Liked");
    }
    catch(err){
@@ -45,7 +45,7 @@ const ProductCard = ({ Data, onLike, onUnlike, onSuggest }) => {
 
   const handleUnlike = async() => {
     try{ 
-        const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/v1/Survey/AddUnlike",apiData);
+        const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/api/v1/Survey/AddUnlike",apiData);
         toast.success("Product UnLiked");
        }
        catch(err){
