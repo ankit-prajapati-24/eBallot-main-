@@ -24,7 +24,7 @@ const VerifyOtp = () => {
         if (ref.current) {
           ref.current.continuousStart(); // Start the loading animation
       }
-        const res = await apiConnecter("POST","http://localhost:4000/api/v1/auth/signup",{firstName,lastName,uid,password,confirmPassword,email,otp,contactNumber,cType});
+        const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/v1/auth/signup",{firstName,lastName,uid,password,confirmPassword,email,otp,contactNumber,cType});
         console.log(res);
         if (ref.current) {
           ref.current.complete(); // Complete the loading animation
