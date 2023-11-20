@@ -14,7 +14,7 @@ const SurveyFeedBack = () => {
   console.log(Surveyid);
   async function fetchProductDetails(){
     try{
-       const res = await apiConnecter("POST","http://localhost:4000/api/v1/Survey/GetProduct",{_id:Surveyid});
+       const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/api/v1/Survey/GetProduct",{_id:Surveyid});
         // console.log(res.data.product);
         const inputObject = res.data.product;
         // const arrayOfObjects = Object.entries(inputObject).map(([key, value]) => ({ [key]: value }));
