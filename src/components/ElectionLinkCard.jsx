@@ -27,7 +27,7 @@ const ElectionLinkCard = ({ heading, links, colorTheme, Category }) => {
 
   async function getElections() {
     try {
-      const apiEndpoint = Category === "govt" ? "http://localhost:4000/api/v1/services/getElection" : "http://localhost:4000/api/v1/Survey/GetSurvey";
+      const apiEndpoint = Category === "govt" ? "https://e-ballot-server.vercel.app/v1/services/getElection" : "https://e-ballot-server.vercel.app/v1/Survey/GetSurvey";
       console.log(apiEndpoint, heading);
 
       const response = await apiConnecter("POST", apiEndpoint, { Name: heading, Category: heading });
