@@ -32,7 +32,7 @@ const CandidateForm = ({setstep}) => {
             ref.current.continuousStart(); // Start the loading animation
         }
         console.log(formData);
-          const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/services/addCandidate",formData);
+          const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/services/addCandidate",formData);
     
           
     if (ref.current) {
