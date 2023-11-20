@@ -37,7 +37,7 @@ const CreateElection = ({ onCreateElection,setstep }) => {
         ref.current.continuousStart(); // Start the loading animation
     }
   
-      const res = await apiConnecter("POST", "http://localhost:4000/api/v1/services/createElection", newElection);
+      const res = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/services/createElection", newElection);
       console.log(res);
   
       if (ref.current) {
