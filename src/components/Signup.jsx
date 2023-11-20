@@ -40,7 +40,7 @@ function Signup() {
       setLoading(true);
       dispatch(setuserdata(formData));
 
-      const res = await apiConnecter("POST", "http://localhost:4000/api/v1/auth/sendotp", formData);
+      const res = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/auth/sendotp", formData);
 
       if (res.data.success) {
         toast.success("Otp Send Successfully");
