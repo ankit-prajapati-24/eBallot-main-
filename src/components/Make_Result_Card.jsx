@@ -5,7 +5,7 @@ const Make_Result_Card = ({heading}) => {
     const[Elections,setElections] = useState([]);
     async function GetElections() {
         try {
-          const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/services/getElection", { Name:heading });
+          const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/services/getElection", { Name:heading });
         
           // Assuming data is an object and you want to convert it into an array
           const data = response.data;
