@@ -39,7 +39,7 @@ const  CastVote = ({ setstep }) => {
         if (ref.current) {
             ref.current.continuousStart(); // Start the loading animation
         }
-      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/services/getCandidates", electionData);
+      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/services/getCandidates", electionData);
       const responseData = response.data;
       const candidatesArray = responseData.data[0].Candidates;
       console.log('Candidate data:' );
