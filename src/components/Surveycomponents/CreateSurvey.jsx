@@ -37,7 +37,7 @@ const CreateSurvey = ({setstep}) => {
             ref.current.continuousStart(); // Start the loading animation
         }
         console.log(formData);
-          const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/Survey/CreateSurvey",formData);
+          const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/Survey/CreateSurvey",formData);
           
     if (ref.current) {
       ref.current.complete(); // Complete the loading animation
