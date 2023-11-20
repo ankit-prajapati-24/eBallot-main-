@@ -73,8 +73,7 @@ const ResultGraph = ({ ref }) => {
              
               <img src={winner.photo} className='w-10 h-10 object-cover rounded-full ' alt="Winner" />
              
-            {winner.name}
-            is the Winner!
+            {winner.name} is the Winner!
           </p>: ""}
         </div>
       )}
