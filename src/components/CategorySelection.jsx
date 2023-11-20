@@ -8,7 +8,7 @@ const CategorySelection = ({ onSelect,setstep }) => {
   const categories = [
     {
       id: 'govt',
-      name: 'Government Category',
+      name: 'Candidate Category',
       description: 'Explore and participate in government-based elections such as national, state, and local elections.',
     },
     {
