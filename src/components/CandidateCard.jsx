@@ -28,7 +28,7 @@ const CandidateCard = ({ candidate,show }) => {
       if (ref.current) {
         ref.current.continuousStart(); // Start the loading animation
     }
-       const res = await apiConnecter("POST","http://localhost:4000/api/v1/services/addVote",payload);
+       const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/v1/services/addVote",payload);
        console.log("response ",res);
        if (ref.current) {
         ref.current.complete(); // Complete the loading animation
