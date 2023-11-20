@@ -47,7 +47,7 @@ const Navbar = () => {
             </ul>
 {
   isLogin == true?
-            <div className="items-center space-x-4 hidden lg:flex">
+            <div className="items-center space-x-4 hidden md:flex lg:flex">
               {/* Add other social media icons here */}
               <div className="flex space-x-4">
                 <Link to="/Profile" className="px-3 py-2 font-bold hover:bg-yellow-500 hover:text-black rounded-md transition-all duration-200">Profile</Link>
