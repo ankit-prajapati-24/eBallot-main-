@@ -15,7 +15,7 @@ const Surveylist = ({ setstep }) => {
 
   async function GetElections() {
     try {
-      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/Survey/GetSurvey", { Category });
+      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/api/v1/Survey/GetSurvey", { Category });
     
       // Assuming data is an object and you want to convert it into an array
       const data = response.data;
