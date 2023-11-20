@@ -56,7 +56,7 @@ const ProductCard = ({ Data, onLike, onUnlike, onSuggest }) => {
 
   const handleSuggest = async() => {
     try{ 
-        const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/v1/Survey/AddSuggetions",apiData);
+        const res = await apiConnecter("POST","https://e-ballot-server.vercel.app/api/v1/Survey/AddSuggetions",apiData);
         toast.success("Product Suggested");
        }
        catch(err){
