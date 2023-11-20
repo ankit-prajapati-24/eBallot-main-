@@ -24,7 +24,7 @@ const ChangePassword = () => {
       setLoading(true);
 
       const toastId = toast.loading('Waiting...');
-      const res = await apiConnecter("POST", "http://localhost:4000/api/v1/profile/ChangePassword", Data);
+      const res = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/profile/ChangePassword", Data);
       console.log(res);
       toast.success(res.data.message);  
       setLoading(false);
