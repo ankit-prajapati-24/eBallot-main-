@@ -19,7 +19,7 @@ const ViewCandidates = ({ setstep }) => {
 
   async function getCandidates() {
     try {
-      const response = await apiConnecter("POST", "http://localhost:4000/api/v1/services/getCandidates", electionData);
+      const response = await apiConnecter("POST", "https://e-ballot-server.vercel.app/v1/services/getCandidates", electionData);
       const responseData = response.data;
       const candidatesArray = responseData.data[0].Candidates;
       console.log('Candidate data:' );
